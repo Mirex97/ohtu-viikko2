@@ -10,21 +10,4 @@
 
     <context:annotation-config />
     <context:component-scan base-package="ohtu.verkkokauppa" />
-    <bean id="kirjanpitoIo" class="ohtu.verkkokauppa.Kirjanpito">
-    </bean>
-    <bean id="varastoIo" class="ohtu.verkkokauppa.Varasto">
-        <constructor-arg ref="kirjanpitoIo" />
-
-    </bean>
-    <bean id="pankkiIo" class="ohtu.verkkokauppa.Pankki">
-        <constructor-arg ref="kirjanpitoIo" />
-    </bean>
-    <bean id="viitegeneraattoriIo" class="ohtu.verkkokauppa.Viitegeneraattori">
-    </bean>
-
-    <bean id="kauppa" class="ohtu.verkkokauppa.Kauppa">
-        <constructor-arg ref="varastoIo" />
-        <constructor-arg ref="pankkiIo" />
-        <constructor-arg ref="viitegeneraattoriIo" />
-    </bean>
 </beans>
